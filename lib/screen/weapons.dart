@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:latihan_responsi/screen/detail_weapons.dart';
 
 import '../model/model.dart';
 
@@ -37,12 +38,12 @@ class _WeaponsAppState extends State<WeaponsApp> {
               return Card(
               child: ListTile(
                 leading: Image.network('https://api.genshin.dev/weapons/${snapshot.data[index]}/icon'),
-                title: Text('${name[0].toUpperCase}${name.substring(1).toLowerCase()}'),
+                title: Text(snapshot.data[index]),
                 onTap: (){
-                  // Navigator.push(context, 
-                  // MaterialPageRoute(builder: (context)=>)
+                  Navigator.push(context, 
+                  MaterialPageRoute(builder: (context)=>DetailWeap(detailWeapons: snapshot.data[index]))
 
-                  // )
+                  );
                 },
 
               ),
